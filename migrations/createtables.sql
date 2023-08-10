@@ -1,0 +1,31 @@
+CREATE TABLE IF NOT EXISTS recipe (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  content TEXT NOT NULL,
+  created_at TIMESTAMP WITHOUT TIME ZONE NOT NULL,
+  updated_at TIMESTAMP WITHOUT TIME ZONE NOT NULL,
+  cooking_time INT NOT NULL,
+  servings INT NOT NULL,
+  difficulty VARCHAR(255) NOT NULL,
+  total_time INT NOT NULL,
+  ingredient_id INT NOT NULL
+
+);
+
+
+CREATE TABLE IF NOT EXISTS ingredient (
+  id SERIAL PRIMARY KEY,
+  name varchar(255) NOT NULL,
+  created_at TIMESTAMP WITHOUT TIME ZONE NOT NULL,
+  updated_at TIMESTAMP WITHOUT TIME ZONE NOT NULL,
+  description TEXT NOT NULL
+  
+);
+
+ CREATE TABLE IF NOT EXISTS review (
+    id SERIAL PRIMARY KEY,
+    recipe_id int NOT NULL,
+    rating int NOT NULL,
+    created_at TIMESTAMP WITHOUT TIME ZONE NOT NULL,  
+    updated_at TIMESTAMP WITHOUT TIME ZONE NOT NULL
+);
