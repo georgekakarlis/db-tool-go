@@ -19,7 +19,6 @@ func ConnectDB() *sql.DB {
 	}
 
 	runMigrations(db)
-	defer db.Close()
 	return db
 }
 
